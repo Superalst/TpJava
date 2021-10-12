@@ -4,4 +4,5 @@ public class Persona {
 
 	public dni 
 	public nombre
+	public apellido
 }
