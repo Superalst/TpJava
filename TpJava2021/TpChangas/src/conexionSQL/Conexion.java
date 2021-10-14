@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class Conexion {
 	
-	private static final String Controlador = "com.mysql.jdbc.Driver";
+	private static final String Controlador = "com.mysql.cj.jdbc.Driver";
 	private static final String URL = "jdbc:mysql://localhost:3306/tp_java";
 	private static final String Usuario = "root";
 	private static final String Contraseña = "1234";
