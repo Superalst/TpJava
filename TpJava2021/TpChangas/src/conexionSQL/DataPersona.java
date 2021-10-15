@@ -47,7 +47,39 @@ public class DataPersona {
 		return pers;
 	}
 
-	
+	public Persona getByDocumento(Persona per) {
+		Persona p=null;
+		PreparedStatement stmt=null;
+		ResultSet rs=null;
+		try {
+			stmt=DbConnector.getInstancia().getConn().prepareStatement(
+					"select Dni, Nombre, Apellido, Telefono, Oficio, AreaTrabajo, ValuacionPromedio from persona where Dni=?");
+			stmt.setInt(1, per.getDni());
+			rs=stmt.executeQuery();
+			if(rs!=null && rs.next()) {
+				p=new Persona();
+				p.setDni(rs.getInt("Dni"));
+				p.setNombre(rs.getString("Nombre"));
+				p.setApellido(rs.getString("Apellido"));
+				p.setTelefono(rs.getString("Telefono"));
+				p.setOficio(rs.getString("Oficio"));
+				p.setAreaTrabajo(rs.getString("AreaTrabajo"));
+				p.setValuacionPromedio(rs.getDouble("ValuacionPromedio"));
+				//
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs!=null) {rs.close();}
+				if(stmt!=null) {stmt.close();}
+				DbConnector.getInstancia().releaseConn();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return p;
+	}
 	
 	public void add(Persona p) {
 		PreparedStatement stmt= null;
