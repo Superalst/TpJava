@@ -24,8 +24,6 @@ public class DataPersona {
 					p.setApellido(rs.getString("apellido"));
 					p.setTelefono(rs.getString("telefono"));
 					p.setOficio(rs.getString("oficio"));
-					
-					
 					p.setAreaTrabajo(rs.getString("areaTrabajo"));
 					p.setValuacionPromedio(rs.getDouble("valuacionPromedio"));
 					pers.add(p);
@@ -48,6 +46,7 @@ public class DataPersona {
 		
 		return pers;
 	}
+
 	
 
 	
