@@ -48,6 +48,36 @@ public class DataPersona {
 	}
 
 	
+	
+	public void add(Persona p) {
+		PreparedStatement stmt= null;
+		try {
+			stmt=DbConnector.getInstancia().getConn().
+					prepareStatement(
+							"insert into persona(dni, nombre, apellido, telefono, oficio, areaTrabajo, valuacionPromedio) values(?,?,?,?,?,?,?)");
+			stmt.setInt(1, p.getDni());
+			stmt.setString(2, p.getNombre());
+			stmt.setString(3, p.getApellido());
+			stmt.setString(4, p.getTelefono());
+			stmt.setString(5, p.getOficio());
+			stmt.setString(6, p.getAreaTrabajo());
+			stmt.setDouble(7, p.getValuacionPromedio());
+			stmt.executeUpdate();
+			
+	        }
+			
+		  catch (SQLException e) {
+	        e.printStackTrace();
+	        
+		} finally {
+	        try {
+	            if(stmt!=null)stmt.close();
+	            DbConnector.getInstancia().releaseConn();
+	        } catch (SQLException e) {
+	        	e.printStackTrace();
+	        }
+		}
+	}
 
 	
 }

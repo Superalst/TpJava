@@ -59,6 +59,21 @@ public class Persona {
 				+ ", oficio=" + oficio + ", areaTrabajo=" + areaTrabajo + ", valuacionPromedio=" + valuacionPromedio
 				+ "]";
 	}
+	
+	public Persona(int dni, String nombre, String apellido, String telefono, String oficio, String areaTrabajo,
+			Double valuacionPromedio) {
+		super();
+		this.dni = dni;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.telefono = telefono;
+		this.oficio = oficio;
+		this.areaTrabajo = areaTrabajo;
+		this.valuacionPromedio = valuacionPromedio;
+	}
+	public Persona() {
+		super();
+	}
 
 	
 	
