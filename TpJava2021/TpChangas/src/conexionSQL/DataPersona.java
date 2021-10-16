@@ -94,8 +94,7 @@ public class DataPersona {
 			stmt.setString(5, p.getOficio());
 			stmt.setString(6, p.getAreaTrabajo());
 			stmt.setDouble(7, p.getValuacionPromedio());
-			stmt.executeUpdate();
-			
+			stmt.executeUpdate();			
 	        }
 			
 		  catch (SQLException e) {
@@ -111,6 +110,32 @@ public class DataPersona {
 		}
 	}
 
+	public void update(Persona per) {
+		PreparedStatement stmt = null;
+		try {
+			stmt = DbConnector.getInstancia().getConn().prepareStatement
+					("UPDATE `bkwscpfq5sshgak97bp2`.`persona` SET `Dni`=?, `Nombre`=?, `Apellido`=?, `Telefono`=?, `Oficio`=?, `AreaTrabajo`=?, `ValuacionPromedio`=? WHERE (`Dni`=?);");
+			stmt.setInt(1, per.getDni());
+			stmt.setString(2, per.getNombre());
+			stmt.setString(3, per.getApellido());
+			stmt.setString(4, per.getTelefono());
+			stmt.setString(5, per.getOficio());
+			stmt.setString(6, per.getAreaTrabajo());
+			stmt.setDouble(7, per.getValuacionPromedio());
+			stmt.setInt(8, per.getDni());
+			
+			stmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+	        try {
+	            if(stmt!=null)stmt.close();
+	            DbConnector.getInstancia().releaseConn();
+	        } catch (SQLException e) {
+	        	e.printStackTrace();
+	        }
+		}
+	}
 	
 	public void drop(Persona per) {
 		PreparedStatement stmt= null;
