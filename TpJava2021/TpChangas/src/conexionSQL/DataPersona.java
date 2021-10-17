@@ -110,7 +110,7 @@ public class DataPersona {
 		}
 	}
 
-	public void update(Persona per) {
+	public void update(int dni,Persona per) {
 		PreparedStatement stmt = null;
 		try {
 			stmt = DbConnector.getInstancia().getConn().prepareStatement
@@ -122,7 +122,7 @@ public class DataPersona {
 			stmt.setString(5, per.getOficio());
 			stmt.setString(6, per.getAreaTrabajo());
 			stmt.setDouble(7, per.getValuacionPromedio());
-			stmt.setInt(8, per.getDni());
+			stmt.setInt(8, dni);
 			
 			stmt.executeUpdate();
 		} catch (Exception e) {
