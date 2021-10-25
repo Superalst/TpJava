@@ -2,7 +2,7 @@ package entidades;
 
 public class Trabajo {
 
-	private int idtrabajo;
+	private int idTrabajo;
 	private String estado;
 	private String fechaIni;
 	private String fechaFin;
@@ -17,10 +17,10 @@ public class Trabajo {
 	private int idLocalidad;
 	
 	public int getIdtrabajo() {
-		return idtrabajo;
+		return idTrabajo;
 	}
 	public void setIdtrabajo(int idtrabajo) {
-		this.idtrabajo = idtrabajo;
+		this.idTrabajo = idtrabajo;
 	}
 	public String getEstado() {
 		return estado;
@@ -97,12 +97,34 @@ public class Trabajo {
 	
 	@Override
 	public String toString() {
-		return "Trabajo [idtrabajo=" + idtrabajo + ", estado=" + estado + ", fechaIni=" + fechaIni + ", fechaFin="
+		return "\nTrabajo [idtrabajo=" + idTrabajo + ", estado=" + estado + ", fechaIni=" + fechaIni + ", fechaFin="
 				+ fechaFin + ", fechaEstimadaFin=" + fechaEstimadaFin + ", fechaEstimadaIni=" + fechaEstimadaIni
 				+ ", ubicacionAprox=" + ubicacionAprox + ", observaciones=" + observaciones + ", valuacionTrabajo="
 				+ valuacionTrabajo + ", idCotizacion=" + idCotizacion + ", dniCliente=" + dniCliente
 				+ ", dniTrabajador=" + dniTrabajador + ", idLocalidad=" + idLocalidad + "]";
 	}
+	public Trabajo(int idTrabajo, String estado, String fechaIni, String fechaFin, String fechaEstimadaFin,
+			String fechaEstimadaIni, String ubicacionAprox, String observaciones, Double valuacionTrabajo,
+			int idCotizacion, int dniCliente, int dniTrabajador, int idLocalidad) {
+		super();
+		this.idTrabajo = idTrabajo;
+		this.estado = estado;
+		this.fechaIni = fechaIni;
+		this.fechaFin = fechaFin;
+		this.fechaEstimadaFin = fechaEstimadaFin;
+		this.fechaEstimadaIni = fechaEstimadaIni;
+		this.ubicacionAprox = ubicacionAprox;
+		this.observaciones = observaciones;
+		this.valuacionTrabajo = valuacionTrabajo;
+		this.idCotizacion = idCotizacion;
+		this.dniCliente = dniCliente;
+		this.dniTrabajador = dniTrabajador;
+		this.idLocalidad = idLocalidad;
+	}
+	public Trabajo() {
+		super();
+	}
+	
 	
 	
 	
