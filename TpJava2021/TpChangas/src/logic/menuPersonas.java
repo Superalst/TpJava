@@ -1,7 +1,6 @@
 package logic;
 
 import java.util.Scanner;
-
 import conexionSQL.DataPersona;
 import entidades.Persona;
 

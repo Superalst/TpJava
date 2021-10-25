@@ -8,6 +8,7 @@ public class Cotizacion {
 	private String fechaCotizacion;
 	private String descripcion;
 	private String materialesRequeridos;
+	
 	public int getIdCotizacion() {
 		return idCotizacion;
 	}
@@ -43,6 +44,12 @@ public class Cotizacion {
 	}
 	public void setMaterialesRequeridos(String materialesRequeridos) {
 		this.materialesRequeridos = materialesRequeridos;
+	}
+	@Override
+	public String toString() {
+		return "\nCotizacion [idCotizacion=" + idCotizacion + ", precioHora=" + precioHora + ", precioFinal="
+				+ precioFinal + ", fechaCotizacion=" + fechaCotizacion + ", descripcion=" + descripcion
+				+ ", materialesRequeridos=" + materialesRequeridos + "]";
 	}
 	
 	
