@@ -2,6 +2,7 @@ package entidades;
 
 public class Trabajo {
 
+	
 	private int idtrabajo;
 	private String estado;
 	private String fechaIni;
