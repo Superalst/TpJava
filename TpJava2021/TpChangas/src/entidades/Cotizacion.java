@@ -8,6 +8,7 @@ public class Cotizacion {
 	private String fechaCotizacion;
 	private String descripcion;
 	private String materialesRequeridos;
+	private Trabajo trabajo;
 	
 	public int getIdCotizacion() {
 		return idCotizacion;
@@ -45,13 +46,34 @@ public class Cotizacion {
 	public void setMaterialesRequeridos(String materialesRequeridos) {
 		this.materialesRequeridos = materialesRequeridos;
 	}
-	@Override
-	public String toString() {
-		return "\nCotizacion [idCotizacion=" + idCotizacion + ", precioHora=" + precioHora + ", precioFinal="
-				+ precioFinal + ", fechaCotizacion=" + fechaCotizacion + ", descripcion=" + descripcion
-				+ ", materialesRequeridos=" + materialesRequeridos + "]";
+	public Trabajo getTrabajo() {
+		return trabajo;
+	}
+	public void setTrabajo(Trabajo trabajo) {
+		this.trabajo = trabajo;
 	}
 	
+	@Override
+	public String toString() {
+		return "Cotizacion [idCotizacion=" + idCotizacion + ", precioHora=" + precioHora + ", precioFinal="
+				+ precioFinal + ", fechaCotizacion=" + fechaCotizacion + ", descripcion=" + descripcion
+				+ ", materialesRequeridos=" + materialesRequeridos + ", trabajo=" + trabajo + "]";
+	}
 	
+	public Cotizacion(int idCotizacion, Double precioHora, Double precioFinal, String fechaCotizacion,
+			String descripcion, String materialesRequeridos, Trabajo trabajo) {
+		super();
+		this.idCotizacion = idCotizacion;
+		this.precioHora = precioHora;
+		this.precioFinal = precioFinal;
+		this.fechaCotizacion = fechaCotizacion;
+		this.descripcion = descripcion;
+		this.materialesRequeridos = materialesRequeridos;
+		this.trabajo = trabajo;
+	}
+	
+	public Cotizacion() {
+		super();
+	}
 
 }

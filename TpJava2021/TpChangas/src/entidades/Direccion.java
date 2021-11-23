@@ -1,5 +1,7 @@
 package entidades;
 
+import java.util.LinkedList;
+
 public class Direccion {
 
 	private int direccion; 
@@ -7,7 +9,8 @@ public class Direccion {
 	private String calle;
 	private String altura; 
 	private int idlocalidad;
-	
+	private LinkedList<Persona> personas;
+	private Localidad localidad;
 	
 	public int getDireccion() {
 		return direccion;
@@ -39,6 +42,16 @@ public class Direccion {
 	public void setIdlocalidad(int idlocalidad) {
 		this.idlocalidad = idlocalidad;
 	}
-	
-	
+	public LinkedList<Persona> getPersonas() {
+		return personas;
+	}
+	public void setPersonas(LinkedList<Persona> personas) {
+		this.personas = personas;
+	}
+	public Localidad getLocalidad() {
+		return localidad;
+	}
+	public void setLocalidad(Localidad localidad) {
+		this.localidad = localidad;
+	}
 }

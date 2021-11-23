@@ -1,5 +1,7 @@
 package entidades;
 
+import java.util.LinkedList;
+
 public class Trabajo {
 
 	
@@ -16,6 +18,9 @@ public class Trabajo {
 	private int dniCliente;
 	private int dniTrabajador;
 	private int idLocalidad;
+	private Persona persona;
+	private Localidad localidad;
+	private LinkedList<Cotizacion> cotizaciones;
 	
 	public int getIdtrabajo() {
 		return idtrabajo;
@@ -95,18 +100,29 @@ public class Trabajo {
 	public void setIdLocalidad(int idLocalidad) {
 		this.idLocalidad = idLocalidad;
 	}
-	
-	@Override
-	public String toString() {
-		return "\nTrabajo [idtrabajo=" + idtrabajo + ", estado=" + estado + ", fechaIni=" + fechaIni + ", fechaFin="
-				+ fechaFin + ", fechaEstimadaFin=" + fechaEstimadaFin + ", fechaEstimadaIni=" + fechaEstimadaIni
-				+ ", ubicacionAprox=" + ubicacionAprox + ", observaciones=" + observaciones + ", valuacionTrabajo="
-				+ valuacionTrabajo + ", idCotizacion=" + idCotizacion + ", dniCliente=" + dniCliente
-				+ ", dniTrabajador=" + dniTrabajador + ", idLocalidad=" + idLocalidad + "]";
+	public Persona getPersona() {
+		return persona;
 	}
+	public void setPersona(Persona persona) {
+		this.persona = persona;
+	}
+	public Localidad getLocalidad() {
+		return localidad;
+	}
+	public void setLocalidad(Localidad localidad) {
+		this.localidad = localidad;
+	}
+	public LinkedList<Cotizacion> getCotizaciones() {
+		return cotizaciones;
+	}
+	public void setCotizaciones(LinkedList<Cotizacion> cotizaciones) {
+		this.cotizaciones = cotizaciones;
+	}
+	
 	public Trabajo(int idtrabajo, String estado, String fechaIni, String fechaFin, String fechaEstimadaFin,
 			String fechaEstimadaIni, String ubicacionAprox, String observaciones, Double valuacionTrabajo,
-			int idCotizacion, int dniCliente, int dniTrabajador, int idLocalidad) {
+			int idCotizacion, int dniCliente, int dniTrabajador, int idLocalidad, Persona persona, Localidad localidad,
+			LinkedList<Cotizacion> cotizaciones) {
 		super();
 		this.idtrabajo = idtrabajo;
 		this.estado = estado;
@@ -121,13 +137,22 @@ public class Trabajo {
 		this.dniCliente = dniCliente;
 		this.dniTrabajador = dniTrabajador;
 		this.idLocalidad = idLocalidad;
+		this.persona = persona;
+		this.localidad = localidad;
+		this.cotizaciones = cotizaciones;
 	}
 	
 	public Trabajo() {
 		super();
 	}
 	
-	
-	
-	
+	@Override
+	public String toString() {
+		return "Trabajo [idtrabajo=" + idtrabajo + ", estado=" + estado + ", fechaIni=" + fechaIni + ", fechaFin="
+				+ fechaFin + ", fechaEstimadaFin=" + fechaEstimadaFin + ", fechaEstimadaIni=" + fechaEstimadaIni
+				+ ", ubicacionAprox=" + ubicacionAprox + ", observaciones=" + observaciones + ", valuacionTrabajo="
+				+ valuacionTrabajo + ", idCotizacion=" + idCotizacion + ", dniCliente=" + dniCliente
+				+ ", dniTrabajador=" + dniTrabajador + ", idLocalidad=" + idLocalidad + ", persona=" + persona
+				+ ", localidad=" + localidad + ", cotizaciones=" + cotizaciones + "]";
+	}
 }
