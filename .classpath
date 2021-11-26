@@ -9,6 +9,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-8.0.25.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Agust/Desktop/Server apache/apache-tomcat-8.0.36/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Agust/Documents/Server apache/apache-tomcat-8.0.36/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="TpJava2021/TpChangas/bin"/>
 </classpath>

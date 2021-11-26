@@ -10,9 +10,8 @@ import entidades.*;
 public class pruebas {
 
 public static void main(String[] args) {
-	 MenuCotizaciones mc= new MenuCotizaciones();
-	 mc.aniadirCotizacion();
-	 
+	 menuPersonas mp= new menuPersonas();
+	 mp.listadoPersonas();
 }
 }
 
